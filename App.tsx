@@ -17,12 +17,14 @@ export default function App() {
           <Text style={styles.aliasText}>Fever Global</Text>
           <Text style={styles.userText}>@fever_gl</Text>
           <Text style={styles.text}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus totam optio minus suscipit illum reiciendis et? Distinctio saepe quae libero doloremque alias! Repudiandae deserunt quidem nesciunt corrupti saepe vel possimus!
+            All aboard: Horizon Of Khufu is now open in Calgary, transporting you to Ancient Egypt! 🐪
+            It's time to step back 4,500 years ion the past! ⏳
           </Text>
           <Image
             source={require('./assets/tweetImage.png')}
             style={styles.image}
-          />
+          />      
+          <Text style={styles.subText}>From feverup.com</Text>     
           <View style={styles.statsRow}>
             <Text style={styles.footerText}>5:45 AM &#183; 2024-12-16 &#183;</Text>
             <Text style={styles.viewCount}>3.9K</Text>
@@ -31,7 +33,11 @@ export default function App() {
         </View>
       </ScrollView> 
       <View style={styles.footer}>
-
+        <View style={styles.replyBox}>
+          <Text style={styles.replyText}>
+            Post your reply
+          </Text>
+        </View>
       </View>
     </View>
   );
@@ -60,14 +66,31 @@ const styles = StyleSheet.create({
   },
   footer: {
     width: Dimensions.get('window').width,
-    height: 90,
+    height: 130,
     backgroundColor: 'rgb(7, 7, 7)',
     borderTopWidth: 1,
     borderTopColor: 'rgb(49, 52, 55)', 
   },
+  replyBox: {
+    backgroundColor: '#202327',
+    width: Dimensions.get('window').width - 20,
+    height: 40,
+    borderRadius: 40,
+    margin: 10,
+  },
+  replyText: {
+
+  },
   text: {
     color: '#ffffff',
     marginTop: 20,
+    fontSize: 18,
+  },
+  subText: {
+    color: '#70767C',
+    marginTop: 5,
+    marginLeft: 20,
+    marginBottom: 20,
   },
   aliasText: {
     fontWeight: 'bold',
@@ -77,12 +100,10 @@ const styles = StyleSheet.create({
     color: '#737373'
   },
   image: {
-    width: 350,
-    height: 350,
-    justifyContent: 'center',
-    resizeMode: 'contain',
+    width: Dimensions.get('window').width - 5,
+    height: 375,
     marginTop: 20,
-    marginBottom: 10
+    resizeMode: 'contain',
   },
   footerText: {
     color: '#737373',
