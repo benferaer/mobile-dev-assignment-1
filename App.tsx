@@ -23,7 +23,11 @@ export default function App() {
             source={require('./assets/tweetImage.png')}
             style={styles.image}
           />
-          <Text style={styles.footerText}>5:45 AM - 2024-12-16 - 3.9K Views</Text>
+          <View style={styles.statsRow}>
+            <Text style={styles.footerText}>5:45 AM &#183; 2024-12-16 &#183;</Text>
+            <Text style={styles.viewCount}>3.9K</Text>
+            <Text style={styles.viewsLabel}>Views</Text>
+          </View>
         </View>
       </ScrollView> 
       <View style={styles.footer}>
@@ -99,5 +103,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#ffffff',
     fontSize: 18,
+  },
+  viewCount: {
+    color: '#ffffff',
+  },
+  viewsLabel: {
+    color: '#737373',
+  },
+  statsRow: {
+    flexDirection: 'row',
+    gap: 5,
   }
 });
