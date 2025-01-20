@@ -1,17 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Dimensions, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-
+        <View style={styles.row}>
+          <Icon name="arrow-back-outline" size={24} color='#ffffff'></Icon>
+          <Text style={styles.headerText}>Post</Text>
+          <Icon name="ellipsis-horizontal-outline" size={24} color='#ffffff'></Icon>
+        </View>
       </View>
       <ScrollView>
         <View style={styles.main}>
+          <Text style={styles.aliasText}>Fever Global</Text>
+          <Text style={styles.userText}>@fever_gl</Text>
           <Text style={styles.text}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus totam optio minus suscipit illum reiciendis et? Distinctio saepe quae libero doloremque alias! Repudiandae deserunt quidem nesciunt corrupti saepe vel possimus!
           </Text>
+          <Image
+            source={require('./assets/tweetImage.png')}
+            style={styles.image}
+          />
+          <Text style={styles.footerText}>5:45 AM - 2024-12-16 - 3.9K Views</Text>
         </View>
       </ScrollView> 
       <View style={styles.footer}>
@@ -51,5 +63,41 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#ffffff',
+    marginTop: 20,
+  },
+  aliasText: {
+    fontWeight: 'bold',
+    color: '#ffffff',
+  },
+  userText: {
+    color: '#737373'
+  },
+  image: {
+    width: 350,
+    height: 350,
+    justifyContent: 'center',
+    resizeMode: 'contain',
+    marginTop: 20,
+    marginBottom: 10
+  },
+  footerText: {
+    color: '#737373',
+    justifyContent: 'flex-end',
+  },
+  row: {
+    flexDirection: 'row',
+    flexGrow: 1,
+    alignItems: 'flex-end',
+    marginTop: 20,
+    marginBottom: 10,
+    justifyContent: 'space-between',
+    marginLeft: 12,
+    marginRight: 12,
+  },
+  headerText: {
+    justifyContent: 'center',
+    fontWeight: 'bold',
+    color: '#ffffff',
+    fontSize: 18,
   }
 });
