@@ -33,9 +33,9 @@ export default function App() {
         />      
         <Text style={styles.subText}>From feverup.com</Text>     
         <View style={styles.statsRow}>
-          <Text style={styles.footerText}>5:45 AM &#183; 2024-12-16 &#183;</Text>
+          <Text style={styles.statsText}>5:45 AM &#183; 2024-12-16 &#183;</Text>
           <Text style={styles.viewCount}>3.9K</Text>
-          <Text style={styles.viewsLabel}>Views</Text>
+          <Text style={styles.statsText}>Views</Text>
         </View>
       </View>
       <View style={styles.footer}>
@@ -44,7 +44,16 @@ export default function App() {
             Post your reply
           </Text>
         </View>
+        <View style={styles.navbar}>
+        <Icon name="home-outline" size={24} color='#ffffff'></Icon>
+        <Icon name="search-outline" size={24} color='#ffffff'></Icon>
+        <Icon name="logo-twitter" size={24} color='#ffffff'></Icon>
+        <Icon name="people-outline" size={24} color='#ffffff'></Icon>
+        <Icon name="notifications-outline" size={24} color='#ffffff'></Icon> 
+        <Icon name="mail-outline" size={24} color='#ffffff'></Icon>
       </View>
+      </View>
+      
     </View>
   );
 }
@@ -62,10 +71,10 @@ const styles = StyleSheet.create({
     zIndex: 100,
     backgroundColor: 'rgb(7, 7, 7)',
     width: Dimensions.get('window').width,
-    height: 100,
+    height: 75,
   },
   main: {
-    height: Dimensions.get('window').height - 230,
+    height: Dimensions.get('window').height - 140,
     paddingTop: 30,
     marginTop: 130,
     width: Dimensions.get('window').width,
@@ -96,6 +105,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginLeft: 3,
     fontSize: 18,
+    paddingLeft: 7,
+    paddingRight: 15
   },
   subText: {
     color: '#70767C',
@@ -130,13 +141,12 @@ const styles = StyleSheet.create({
   },
   image: {
     width: Dimensions.get('window').width - 5,
-    height: 375,
+    height: 340,
     marginTop: 20,
     resizeMode: 'contain',
   },
-  footerText: {
+  statsText: {
     color: '#737373',
-    justifyContent: 'flex-end',
   },
   row: {
     flexDirection: 'row',
@@ -157,12 +167,17 @@ const styles = StyleSheet.create({
   viewCount: {
     color: '#ffffff',
   },
-  viewsLabel: {
-    color: '#737373',
-  },
   statsRow: {
     flexDirection: 'row',
     gap: 5,
     marginLeft: 10,
+  },
+  navbar: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingLeft: 15,
+    paddingRight:15,
+    marginTop: 5,
+    backgroundColor: '#070707'
   }
 });
