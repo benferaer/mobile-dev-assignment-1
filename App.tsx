@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, ScrollView, Dimensions, Image } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function App() {
@@ -12,26 +12,32 @@ export default function App() {
           <Icon name="ellipsis-horizontal-outline" size={24} color='#ffffff'></Icon>
         </View>
       </View>
-      <ScrollView>
-        <View style={styles.main}>
-          <Text style={styles.aliasText}>Fever Global</Text>
-          <Text style={styles.userText}>@fever_gl</Text>
-          <Text style={styles.text}>
-            All aboard: Horizon Of Khufu is now open in Calgary, transporting you to Ancient Egypt! 🐪
-            It's time to step back 4,500 years ion the past! ⏳
-          </Text>
+      <View style={styles.main}>
+        <View style={styles.userContainer}>
           <Image
-            source={require('./assets/tweetImage.png')}
-            style={styles.image}
+            source={require('./assets/userIcon.png')}
+            style={styles.userIcon}
           />      
-          <Text style={styles.subText}>From feverup.com</Text>     
-          <View style={styles.statsRow}>
-            <Text style={styles.footerText}>5:45 AM &#183; 2024-12-16 &#183;</Text>
-            <Text style={styles.viewCount}>3.9K</Text>
-            <Text style={styles.viewsLabel}>Views</Text>
+          <View>
+            <Text style={styles.aliasText}>Fever Global</Text>
+            <Text style={styles.userText}>@fever_gl</Text>          
           </View>
         </View>
-      </ScrollView> 
+        <Text style={styles.text}>
+          All aboard: Horizon Of Khufu is now open in Calgary, transporting you to Ancient Egypt! 🐪
+          It's time to step back 4,500 years ion the past! ⏳
+        </Text>
+        <Image
+          source={require('./assets/tweetImage.png')}
+          style={styles.image}
+        />      
+        <Text style={styles.subText}>From feverup.com</Text>     
+        <View style={styles.statsRow}>
+          <Text style={styles.footerText}>5:45 AM &#183; 2024-12-16 &#183;</Text>
+          <Text style={styles.viewCount}>3.9K</Text>
+          <Text style={styles.viewsLabel}>Views</Text>
+        </View>
+      </View>
       <View style={styles.footer}>
         <View style={styles.replyBox}>
           <Text style={styles.replyText}>
@@ -59,14 +65,15 @@ const styles = StyleSheet.create({
     height: 100,
   },
   main: {
-    height: 800,
-    marginTop: 146.5,
+    height: Dimensions.get('window').height - 230,
+    paddingTop: 30,
+    marginTop: 130,
     width: Dimensions.get('window').width,
     backgroundColor: 'rgb(0, 0, 0)',
   },
   footer: {
     width: Dimensions.get('window').width,
-    height: 130,
+    height: 192,
     backgroundColor: 'rgb(7, 7, 7)',
     borderTopWidth: 1,
     borderTopColor: 'rgb(49, 52, 55)', 
@@ -77,13 +84,17 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 40,
     margin: 10,
+    paddingLeft: 13,
+    paddingTop: 10,
   },
   replyText: {
-
+    color: '#71767B',
+    fontSize: 16,
   },
   text: {
     color: '#ffffff',
     marginTop: 20,
+    marginLeft: 3,
     fontSize: 18,
   },
   subText: {
@@ -93,11 +104,29 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   aliasText: {
-    fontWeight: 'bold',
     color: '#ffffff',
+    fontSize: 16,
+    fontWeight: '500',
+    width: 100,
+    marginLeft: 10,
+    marginTop: 5,
   },
   userText: {
-    color: '#737373'
+    color: '#737373',
+    width: 100,
+    marginLeft: 10,
+  },
+  userIcon: {
+    width: 50,
+    height: 50,
+    marginLeft: 7,
+  },
+  userContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'nowrap',
+    width: Dimensions.get('window').width,
+    height: 'auto'
   },
   image: {
     width: Dimensions.get('window').width - 5,
@@ -134,5 +163,6 @@ const styles = StyleSheet.create({
   statsRow: {
     flexDirection: 'row',
     gap: 5,
+    marginLeft: 10,
   }
 });
