@@ -48,15 +48,14 @@ export default function App() {
           </Text>
         </View>
         <View style={styles.navbar}>
-        <Icon name="home-outline" size={24} color='#ffffff'></Icon>
-        <Icon name="search-outline" size={24} color='#ffffff'></Icon>
-        <Icon name="logo-twitter" size={24} color='#ffffff'></Icon>
-        <Icon name="people-outline" size={24} color='#ffffff'></Icon>
-        <Icon name="notifications-outline" size={24} color='#ffffff'></Icon> 
-        <Icon name="mail-outline" size={24} color='#ffffff'></Icon>
-      </View>
-      </View>
-      
+          <Icon name="home-outline" size={24} color='#ffffff'></Icon>
+          <Icon name="search-outline" size={24} color='#ffffff'></Icon>
+          <Icon name="logo-twitter" size={24} color='#ffffff'></Icon>
+          <Icon name="people-outline" size={24} color='#ffffff'></Icon>
+          <Icon name="notifications-outline" size={24} color='#ffffff'></Icon> 
+          <Icon name="mail-outline" size={24} color='#ffffff'></Icon>
+        </View>
+      </View>  
     </View>
   );
 }
@@ -101,7 +100,7 @@ const styles = StyleSheet.create({
 // All Main View Styles
 
   main: {
-    height: '67%',
+    height: Platform.OS === 'android' ? '71%' : '67%',
     marginTop: '15%',
     marginBottom: '10%',
     width: Dimensions.get('window').width,
@@ -134,7 +133,7 @@ const styles = StyleSheet.create({
   },
   tweetText: {
     color: '#ffffff',
-    marginTop: 20,
+    marginTop: Platform.OS === 'android' ? 12 : 20,
     marginLeft: 3,
     fontSize: Platform.OS === 'android' ? 15.2 : 18,
     paddingLeft: 7,
@@ -182,7 +181,7 @@ const styles = StyleSheet.create({
 
   footer: {
     width: Dimensions.get('window').width,
-    height: '12%',
+    height: Platform.OS === 'android' ? '8%' : '12%',
     backgroundColor: 'rgb(7, 7, 7)',
     borderTopWidth: 1,
     borderTopColor: 'rgb(49, 52, 55)', 
@@ -206,6 +205,6 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight:15,
     marginTop: 5,
-    backgroundColor: '#070707'
+    backgroundColor: 'rgb(7, 7, 7)',
   },
 });
