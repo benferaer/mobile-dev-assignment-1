@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Dimensions, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Image, TouchableOpacity, Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 export default function App() {
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     marginTop: 20,
     marginLeft: 3,
-    fontSize: 18,
+    fontSize: Platform.OS === 'android' ? 15.2 : 18,
     paddingLeft: 7,
     paddingRight: 15
   },
@@ -159,6 +159,7 @@ const styles = StyleSheet.create({
   },
   statsText: {
     color: '#737373',
+    paddingBottom: 10,
   },
   viewCount: {
     color: '#ffffff',
